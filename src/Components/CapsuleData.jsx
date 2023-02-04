@@ -55,6 +55,8 @@ const CapsuleData = () => {
                         <option value="">All</option>
                         <option value="active">Active</option>
                         <option value="retired">Retired</option>
+                        <option value="unknown">Unknown</option>
+                        <option value="destroyed">Destroyed</option>
                     </select>
                 </div>
                 <div className="md:w-1/2 sm:w-full mb-2">
