@@ -29,9 +29,9 @@ const CapsuleData = () => {
         <>
 
             {/* ------SEARCH-------- */}
-            <div className="flex flex-col md:flex-row sm:flex-col p-10 gap-5">
+            <div className="flex flex-col md:flex-row sm:flex-col p-10 gap-5 dark:bg-gray-900">
                 <div className="md:w-1/2 sm:w-full mb-2">
-                    <label className="block text-gray-700 font-medium mb-2" htmlFor="status">
+                    <label className="block text-blue-500 font-medium mb-2" htmlFor="status">
                         Status
                     </label>
                     <select
@@ -46,7 +46,7 @@ const CapsuleData = () => {
                     </select>
                 </div>
                 <div className="md:w-1/2 sm:w-full mb-2">
-                    <label className="block text-gray-700 font-medium mb-2" htmlFor="original_launch">
+                    <label className="block text-blue-500 font-medium mb-2" htmlFor="original_launch">
                         Original Launch
                     </label>
                     <input
@@ -58,7 +58,7 @@ const CapsuleData = () => {
                     />
                 </div>
                 <div className="md:w-1/2 sm:w-full">
-                    <label className="block text-gray-700 font-medium mb-2" htmlFor="type">
+                    <label className="block text-blue-500 font-medium mb-2" htmlFor="type">
                         Type
                     </label>
                     <select
@@ -75,7 +75,47 @@ const CapsuleData = () => {
                 </div>
             </div>
 
-            
+            {/* ------DATA MAPING-------- */}
+            <div className="flex flex-wrap p-10 dark:bg-gray-900">
+                {filteredCapsules.map((item) => {
+                    return (
+                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 p-3 border border-gray-500 rounded-lg p-5 bg-gray-700" key={item.capsule_serial}>
+                            <div className="p-5 text-left w-full">
+                            <h4 className='text-xl font-bold '>Serial : <span className='text-blue-500'>{item.capsule_serial}</span></h4>
+                            <h4 className='text-xl font-bold '>Type : <span className='text-blue-500'>{item.type}</span></h4>
+                            <h4 className='text-xl font-bold '>Launch : <span className='text-blue-500'>{item.original_launch}</span></h4>
+                            {/* <h4 className='text-xl font-bold '>Capsule ID : <span className='text-blue-500'>{item.capsule_id}</span></h4> */}
+                            <h4 className='text-xl font-bold '>Status : <span className='text-blue-500'>{item.status}</span></h4>
+                            </div>
+                            <div className="relative">
+                                <div className="border border-gray-500 mt-5 text-xl font-bold bg-gray-300 cursor-pointer rounded-lg" onClick={() => setShowPopup(true)}>
+                                    View Details
+                                </div>
+                                {showPopup && (
+                                    <div className="fixed inset-0 flex items-center justify-center p-4 bg-blur-md">
+                                        <div className="bg-gray-700 p-4 rounded">
+                                            <button className="text-blue-500 float-right mb-10" onClick={() => setShowPopup(false)}>
+                                                Close
+                                            </button>
+                                            <div className="p-5 text-left w-80">
+                                                <h4 className='text-xl font-bold '>Serial : <span className='text-blue-500'>{item.capsule_serial}</span></h4>
+                                                <h4 className='text-xl font-bold '>Capsule ID : <span className='text-blue-500'>{item.capsule_id}</span></h4>
+                                                <h4 className='text-xl font-bold '>Status : <span className='text-blue-500'>{item.status}</span></h4>
+                                                {/* <h4 className='text-xl font-bold '>Mission Name : <span className='text-blue-500'>{item.missions[1].name}</span></h4> */}
+                                                <h4 className='text-xl font-bold '>Landings : <span className='text-blue-500'>{item.landings}</span></h4>
+                                                <h4 className='text-xl font-bold '>Type : <span className='text-blue-500'>{item.type}</span> </h4>
+                                                <h4 className='text-xl font-bold '>Details : <span className='text-blue-500 '>{item.details}</span></h4>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )
+                })}
+
+            </div>
         </>
     )
 }
