@@ -84,7 +84,6 @@ const CapsuleData = () => {
                             <h4 className='text-xl font-bold '>Serial : <span className='text-blue-500'>{item.capsule_serial}</span></h4>
                             <h4 className='text-xl font-bold '>Type : <span className='text-blue-500'>{item.type}</span></h4>
                             <h4 className='text-xl font-bold '>Launch : <span className='text-blue-500'>{item.original_launch}</span></h4>
-                            {/* <h4 className='text-xl font-bold '>Capsule ID : <span className='text-blue-500'>{item.capsule_id}</span></h4> */}
                             <h4 className='text-xl font-bold '>Status : <span className='text-blue-500'>{item.status}</span></h4>
                             </div>
                             <div className="relative">
