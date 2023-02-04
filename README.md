@@ -20,6 +20,7 @@
 - Redux
 - Tailwind CSS
 - REST API
+- Responsiveness for all screen size
 
 
 
@@ -37,3 +38,20 @@ Run App
 ```
 npm run start
 ```
+
+
+## Glimpse of website :
+Navbar
+![Navbar](https://user-images.githubusercontent.com/100846987/216773244-99ffa5ac-06c7-42fb-b387-5bc448e2e88e.PNG)
+
+Searchbar
+![search](https://user-images.githubusercontent.com/100846987/216773304-c66793b3-305c-401a-8bce-40500e96c86f.PNG)
+
+Popup
+![popup](https://user-images.githubusercontent.com/100846987/216773317-ba31e7bc-ccc7-47ac-a024-3a58525a85ed.PNG)
+
+
+
+
+
+
